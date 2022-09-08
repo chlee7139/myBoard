@@ -23,7 +23,7 @@ submit.addEventListener("click", () => {
 		"content" : contents.value
 	};
 	console.log(blog)
-	console.log(getData())
+	console.log(getData().no)
 });
 
 

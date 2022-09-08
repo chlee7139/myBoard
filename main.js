@@ -5,7 +5,16 @@ const id = document.querySelector(".id-box");
 const pwd = document.querySelector(".pwd-box");
 const contents = document.querySelector(".content");
 const submit = document.querySelector(".submit");
-const data = JSON.parse(content)
+const getData = () => {
+
+fetch('./content.json')
+  .then(response => response.json())
+  .then(data => {return data})
+  .catch(error => {
+	  console.log(error)
+	  return null
+  });
+}
 submit.addEventListener("click", () => {
 		
 	const blog = {
@@ -14,6 +23,7 @@ submit.addEventListener("click", () => {
 		"content" : contents.value
 	};
 	console.log(blog)
+	console.log(getData())
 });
 
 
